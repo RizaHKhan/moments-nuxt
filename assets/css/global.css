@@ -21,5 +21,7 @@ body {
   background: black;
   color: white;
   position: relative;
+  width: 90%;
+  margin: auto;
 }
 /*# sourceMappingURL=global.css.map */

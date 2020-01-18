@@ -9,7 +9,7 @@
       </div>
       <div class="nav-inner" v-bind:class="{menuOpen: isActive}">
         <ul class="list-container">
-          <li class="list-item"><nuxt-link to="">One</nuxt-link></li>
+          <li class="list-item"><nuxt-link to="/">Home</nuxt-link></li>
           <li class="list-item"><nuxt-link to="">Two</nuxt-link></li>
           <li class="list-item"><nuxt-link to="">Three</nuxt-link></li>
         </ul>
@@ -38,7 +38,6 @@ export default {
 <style scoped>
   .header {
     display: flex;
-    width: 90%;
     height: 100px;
     margin: auto;
     justify-content: space-between;

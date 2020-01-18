@@ -1,9 +1,6 @@
 <template>
   <div class="footer">
-    <div class="section">1</div>
-    <div class="section">2</div>
-    <div class="section">3</div>
-    <div class="section">4</div>
+    <div class="section">Footer Section</div>
   </div>
 </template>
 
