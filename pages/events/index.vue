@@ -1,6 +1,7 @@
 <template>
   <div class="events">
-    <EventList :events="events"/>
+    <EventList :events="this.$store.state.events.events" />
+    <h1>This is the counter amount:{{ this.$store.state.counter.counter }}</h1>
   </div>
 </template>
 
@@ -10,15 +11,8 @@ export default {
   components: {
     EventList
   },
-  data () {
-    return {
-      events: [
-        { id: 1, name: 'Wordpress', price: 100 },
-        { id: 2, name: 'VueJS', price: 200 },
-        { id: 3, name: 'React', price: 300 },
-        { id: 4, name: 'Angular', price: 400 }
-      ]
-    }
+  created () {
+    this.$store.dispatch('counter/increment', 10)
   }
 }
 </script>
