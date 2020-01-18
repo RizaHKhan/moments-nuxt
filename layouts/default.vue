@@ -18,5 +18,11 @@ export default {
 </script>
 
 <style scoped>
+.main-container {
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
 
+}
 </style>

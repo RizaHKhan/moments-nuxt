@@ -39,7 +39,6 @@ export default {
   .header {
     display: flex;
     height: 100px;
-    margin: auto;
     justify-content: space-between;
   }
 
