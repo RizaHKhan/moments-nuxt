@@ -10,7 +10,7 @@
       <div class="nav-inner" v-bind:class="{menuOpen: isActive}">
         <ul class="list-container">
           <li class="list-item"><nuxt-link to="/">Home</nuxt-link></li>
-          <li class="list-item"><nuxt-link to="">Two</nuxt-link></li>
+          <li class="list-item"><nuxt-link to="/about">About</nuxt-link></li>
           <li class="list-item"><nuxt-link to="">Three</nuxt-link></li>
         </ul>
         <div class="login">

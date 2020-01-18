@@ -6,7 +6,6 @@
 
 <style scoped>
   .footer {
-    width: 90%;
     margin: auto;
     border-top: 1px white solid;
     padding: 10px 0;
