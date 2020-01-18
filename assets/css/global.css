@@ -1,0 +1,24 @@
+/*
+TABLE OF CONTENTS:
+1. GLOBAL SETTINGS
+*/
+/*s GLOBAL SETTINGS */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: black;
+  color: white;
+}
+/*# sourceMappingURL=global.css.map */
