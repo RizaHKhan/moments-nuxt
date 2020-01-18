@@ -1,6 +1,5 @@
 <template>
   <div class="single-event">
-    <h1>ID: {{ id }}</h1>
     <h1>Name: {{ name }}</h1>
     <h1>Price: {{ price }}</h1>
   </div>
@@ -29,7 +28,7 @@ export default {
 <style scoped>
   .single-event {
     border-radius: 10px;
-    border: solid 1px red;
-    background: rgba(100,100,100,.2);
+    padding: 10px;
+    background: rgba(150,150,150,.5);
   }
 </style>

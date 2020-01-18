@@ -156,6 +156,7 @@ export default {
     background: #27a9e1;
     border: 0;
     color: white;
+    border-radius: 5px;
   }
 
   @media (min-width: 1000px) {
