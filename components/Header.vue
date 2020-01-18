@@ -11,7 +11,7 @@
         <ul class="list-container">
           <li class="list-item"><nuxt-link to="/">Home</nuxt-link></li>
           <li class="list-item"><nuxt-link to="/about">About</nuxt-link></li>
-          <li class="list-item"><nuxt-link to="">Three</nuxt-link></li>
+          <li class="list-item"><nuxt-link to="/events">Events</nuxt-link></li>
         </ul>
         <div class="login">
           <form action="#" class="login-form">

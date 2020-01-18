@@ -1,11 +1,15 @@
 <template>
   <div class="event-id">
-    <h1>This is the single event ID {{ $route.params.id }}</h1>
+    <EventPreview />
   </div>
 </template>
 
 <script>
+import EventPreview from '@/components/Event/EventPreview'
 export default {
+  components: {
+    EventPreview
+  },
   created: {
     alert () {
       alert('I am loaded')
