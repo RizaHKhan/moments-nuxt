@@ -15,8 +15,8 @@
         </ul>
         <div class="login">
           <form action="#" class="login-form">
-            <input type="email">
-            <input type="password">
+            <input type="email" placeholder="email">
+            <input type="password" placeholder="password">
             <input id="login-btn" type="submit" value="Login">
           </form>
         </div>
@@ -147,15 +147,19 @@ export default {
     margin: 5px 0;
     font-size: 20px;
     padding: 10px 20px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid white;
+    color: white;
   }
 
   #login-btn {
-    background: blue;
+    background: #27a9e1;
     border: 0;
     color: white;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 1000px) {
 
     .burger {
       display: none;
@@ -175,6 +179,7 @@ export default {
     }
 
     .list-container > li {
+      margin: 0 10px 0 0;
       font-size: 18px;
     }
 
@@ -187,14 +192,11 @@ export default {
   .login-form > input {
     margin: 0 5px;
     font-size: 18px;
-    padding: 0;
+    padding: 5px;
   }
 
   #login-btn {
-    background: blue;
-    border: 0;
-    color: white;
-    width: 50px;
+    width: 100px;
   }
 }
 
