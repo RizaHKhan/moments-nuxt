@@ -4,7 +4,7 @@ export const state = () => ({
     { id: 2, name: 'VueJS', price: 200 },
     { id: 3, name: 'React', price: 300 },
     { id: 4, name: 'Angular', price: 500 },
-    { id: 4, name: 'NodeJS', price: 5000 }
+    { id: 5, name: 'NodeJS', price: 5000 }
   ]
 })
 
@@ -21,7 +21,5 @@ export const actions = {
 }
 
 export const getters = {
-  loadEvents (state) {
-    return state.events
-  }
+
 }

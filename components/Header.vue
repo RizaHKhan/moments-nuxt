@@ -4,7 +4,7 @@
       <h1>Moments</h1>
     </div>
     <div class="nav">
-      <div class="burger" @click.prevent="isActive = !isActive" v-bind:class="{open: isActive}">
+      <div @click.prevent="isActive = !isActive" v-bind:class="{open: isActive}" class="burger">
         <div></div>
       </div>
       <div class="nav-inner" v-bind:class="{menuOpen: isActive}">

@@ -1,12 +1,12 @@
 <template>
   <div class="event-list">
-    <EventPreview
-    v-for="event in events"
-    :key="event.id"
-    :id="event.id"
-    :name="event.name"
-    :price="event.price"
-    />
+    <nuxt-link v-for="event in events" :key="event.id" :to="'/events/' + event.id">
+      <EventPreview
+        :id="event.id"
+        :name="event.name"
+        :price="event.price"
+      />
+    </nuxt-link>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
   props: {
     events: {
       type: Array,
-      requiired: true
+      required: true
     }
   }
 }
