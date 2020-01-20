@@ -10,7 +10,7 @@ export default {
   name: 'EventPreview',
   props: {
     id: {
-      type: Number,
+      type: String,
       required: true
     },
     name: {
