@@ -1,11 +1,18 @@
 const express = require('express')
+const cors = require('cors')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const router = require('./router')
 const app = express()
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
+
+// Attaches the body object to the request object
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(cors())
 
 async function start () {
   // Init Nuxt.js
@@ -21,6 +28,7 @@ async function start () {
     await nuxt.ready()
   }
 
+  app.use('/moments/api/', router)
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
@@ -31,4 +39,5 @@ async function start () {
     badge: true
   })
 }
-start()
+
+module.exports = start

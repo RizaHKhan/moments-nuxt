@@ -15,9 +15,14 @@
         </ul>
         <div class="login">
           <form action="#" class="login-form">
-            <input type="email" placeholder="email">
-            <input type="password" placeholder="password">
-            <input id="login-btn" type="submit" value="Login">
+            <input type="email" v-model="loginInfo.name" name="email" placeholder="email">
+            <input type="password" name="password" v-model="loginInfo.password" placeholder="password">
+            <input
+              id="login-btn"
+              @click="login(loginInfo)"
+              type="submit"
+              value="Login"
+            >
           </form>
         </div>
       </div>
@@ -26,11 +31,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data () {
     return {
-      isActive: false
+      isActive: false,
+      loginInfo: {
+        name: '',
+        password: ''
+      }
     }
+  },
+  methods: {
+    ...mapActions({
+      login: 'events/login'
+    })
   }
 }
 </script>

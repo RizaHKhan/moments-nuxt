@@ -31,4 +31,9 @@ export default {
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 </style>

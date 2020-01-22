@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const state = () => ({
   events: [
     { id: '1', name: 'Wordpress', price: 100 },
@@ -14,5 +16,18 @@ export const getters = {
   },
   event: state => (id) => {
     return state.events.find(event => event.id === id)
+  }
+}
+
+export const mutations = {
+  login () {
+    console.log('Called from mutations')
+  }
+}
+
+export const actions = {
+  async login (vueContext, loginInfo) {
+    await axios.post('/moments/api/login', loginInfo)
+    vueContext.commit('login')
   }
 }
