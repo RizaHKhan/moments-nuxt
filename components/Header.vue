@@ -163,7 +163,7 @@ export default {
     padding: 10px 20px;
     background: 0;
     border: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
     color: white;
   }
 

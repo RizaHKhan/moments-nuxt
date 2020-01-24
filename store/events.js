@@ -7,7 +7,8 @@ export const state = () => ({
     { id: '3', name: 'React', price: 300 },
     { id: '4', name: 'Angular', price: 500 },
     { id: '5', name: 'NodeJS', price: 5000 }
-  ]
+  ],
+  errors: []
 })
 
 export const getters = {
@@ -22,12 +23,25 @@ export const getters = {
 export const mutations = {
   login () {
     console.log('Called from mutations')
+  },
+  errors (state, errors) {
+    console.log(errors)
   }
 }
 
 export const actions = {
+  // LOGIN
   async login (vueContext, loginInfo) {
     await axios.post('/moments/api/login', loginInfo)
     vueContext.commit('login')
+  },
+  // REGISTER
+  async register (vuexContext, registerInfo) {
+    try {
+      const response = await axios.post('/moments/api/register', registerInfo)
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
   }
 }

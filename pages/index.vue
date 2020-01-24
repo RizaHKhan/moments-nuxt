@@ -1,7 +1,6 @@
 <template>
   <div class="root">
-    <h1>This is the root page</h1>
-    <About />
+    <img src="@/assets/images/Illidan.png" alt="illadin wow tbc">
   </div>
 </template>
 

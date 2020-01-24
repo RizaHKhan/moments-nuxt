@@ -1,5 +1,14 @@
 <template>
   <div class="sidebar">
-    <h1>Sidebar</h1>
+    <Register />
   </div>
 </template>
+
+<script>
+import Register from '@/components/Register'
+export default {
+  components: {
+    Register
+  }
+}
+</script>
