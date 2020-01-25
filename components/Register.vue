@@ -1,11 +1,11 @@
 <template>
   <div class="register">
     <h3>Not Registered? Register below and start posting events!</h3>
-    <form action="#">
+    <form method="POST" v-on:submit.prevent="register(registerInfo)">
       <input type="text" v-model="registerInfo.username" name="username" placeholder="Username">
       <input type="email" v-model="registerInfo.email" name="email" placeholder="Email">
       <input type="password" v-model="registerInfo.password" name="password" placeholder="Password">
-      <input id="register" @click="register(registerInfo)" type="submit" placeholder="Register">
+      <input id="register" type="submit" placeholder="Register">
     </form>
   </div>
 </template>

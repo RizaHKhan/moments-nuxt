@@ -33,9 +33,13 @@ export const actions = {
   async register (vuexContext, registerInfo) {
     try {
       const response = await axios.post('/moments/api/register', registerInfo)
-      console.log(response)
+      console.log(response, 'try')
     } catch (err) {
-      console.log(err)
+      if (err.response) {
+        console.log(err.response.data, 'catch')
+      } else {
+        console.log('Error', err.message)
+      }
     }
   }
 }
