@@ -1,10 +1,8 @@
 <template>
   <div class="register">
-    <div class="errors">
-      <ul v-if="errors">
-        <li v-for="(error, index) in errors" v-bind:key='index'>{{ error }} </li>
-      </ul>
-    </div>
+    <ul v-if="errors.length != 0" v-bind:class="{errors: errors}">
+      <li v-for="(error, index) in errors" v-bind:key='index'>{{ error }} </li>
+    </ul>
     <h3>Not Registered? Register below and start posting events!</h3>
     <form method="POST" v-on:submit.prevent="register(registerInfo)">
       <input type="text" v-model="registerInfo.username" name="username" placeholder="Username">
@@ -77,8 +75,19 @@ form input {
   background: white;
 }
 
-.errors > ul > li {
+.errors > li {
   list-style: none;
   color: rgba(200,0,0,.9);
 }
+
+.errors {
+  height: 0px;
+  animation: trans-in .5s ease forwards;
+}
+
+@keyframes trans-in {
+  0% {height: 0px;}
+  100% {height: 50px;}
+}
+
 </style>
