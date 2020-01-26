@@ -1,5 +1,10 @@
 <template>
   <div class="register">
+    <div class="errors">
+      <ul v-if="errors">
+        <li v-for="(error, index) in errors" v-bind:key='index'>{{ error }} </li>
+      </ul>
+    </div>
     <h3>Not Registered? Register below and start posting events!</h3>
     <form method="POST" v-on:submit.prevent="register(registerInfo)">
       <input type="text" v-model="registerInfo.username" name="username" placeholder="Username">
@@ -11,7 +16,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -22,6 +27,11 @@ export default {
         password: ''
       }
     }
+  },
+  computed: {
+    ...mapGetters({
+      errors: 'events/errors'
+    })
   },
   methods: {
     ...mapActions({
@@ -36,7 +46,6 @@ export default {
   border: solid 2px white;
   border-radius: 5px;
   padding: 10px;
-
 }
 
 h3 {
@@ -66,5 +75,10 @@ form input {
 #register:hover {
   color: black;
   background: white;
+}
+
+.errors > ul > li {
+  list-style: none;
+  color: rgba(200,0,0,.9);
 }
 </style>

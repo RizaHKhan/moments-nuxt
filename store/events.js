@@ -6,12 +6,11 @@ export const state = () => ({
 })
 
 export const getters = {
-  events: (state) => {
-    return state.events
-  },
+  events: state => state.events,
   event: state => (id) => {
     return state.events.find(event => event.id === id)
-  }
+  },
+  errors: state => state.errors
 }
 
 export const mutations = {
@@ -19,7 +18,14 @@ export const mutations = {
     console.log('Called from mutations')
   },
   errors (state, errors) {
-    console.log(errors)
+    if (!errors) {
+      state.errors = []
+    } else {
+      Object.values(errors).forEach((e) => {
+        console.log(e.message)
+        state.errors.push(e.message)
+      })
+    }
   }
 }
 
@@ -31,12 +37,13 @@ export const actions = {
   },
   // REGISTER
   async register (vuexContext, registerInfo) {
+    vuexContext.commit('errors', '')
     try {
       const response = await axios.post('/moments/api/register', registerInfo)
       console.log(response, 'try')
     } catch (err) {
       if (err.response) {
-        console.log(err.response.data, 'catch')
+        vuexContext.commit('errors', err.response.data.errors)
       } else {
         console.log('Error', err.message)
       }
