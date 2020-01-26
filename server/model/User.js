@@ -3,7 +3,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const ObjectId = mongoose.Schema.Types.ObjectId
+// const ObjectId = mongoose.Schema.Types.ObjectId
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -29,17 +29,6 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [5, 'Password must be at least 5 characters']
   },
-  cart: [{
-    _id: {
-      type: ObjectId,
-      required: true,
-      unique: true
-    },
-    quantity: {
-      type: Number,
-      required: true
-    }
-  }],
   tokens: [{
     token: {
       type: String,

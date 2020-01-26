@@ -10,10 +10,9 @@ exports.register = async (req, res) => {
     await user.save()
     res.send({ user })
   } catch (err) {
-    if (err.name === 'ValidationError') {
+    if (err.name === 'ValidationError' || err.name === 'MongoError') {
       res.status(404).send(err)
     } else {
-      console.log(err)
       res.status(500).send('Something went wrong')
     }
   }

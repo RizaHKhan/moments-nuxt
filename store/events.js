@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export const state = () => ({
+  user: {},
   events: [],
   errors: []
 })
@@ -14,15 +15,14 @@ export const getters = {
 }
 
 export const mutations = {
-  login () {
-    console.log('Called from mutations')
+  user (state, user) {
+    state.user = user
   },
   errors (state, errors) {
     if (!errors) {
       state.errors = []
     } else {
       Object.values(errors).forEach((e) => {
-        console.log(e.message)
         state.errors.push(e.message)
       })
     }
@@ -40,12 +40,12 @@ export const actions = {
     vuexContext.commit('errors', '')
     try {
       const response = await axios.post('/moments/api/register', registerInfo)
-      console.log(response, 'try')
+      vuexContext.commit('user', response.data)
     } catch (err) {
       if (err.response) {
-        vuexContext.commit('errors', err.response.data.errors)
+        vuexContext.commit('errors', err.response.data.errors || { err: { message: 'Please try again later' } })
       } else {
-        console.log('Error', err.message)
+        vuexContext.commit('errors', { err: { message: 'Please try again later' } })
       }
     }
   }
